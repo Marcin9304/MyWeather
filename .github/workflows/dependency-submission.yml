@@ -19,7 +19,14 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
 
-    - name: Generowanie i wysyłanie grafu zależności
+    - name: Konfiguracja Gradle i nasłuchiwanie zależności
       uses: gradle/actions/setup-gradle@v4
       with:
         dependency-graph: generate-and-submit
+
+    - name: Nadanie uprawnień (naprawa błędu Windows/Linux)
+      run: chmod +x gradlew
+
+    - name: Budowanie projektu (aby wykryć zależności)
+      # To polecenie zmusi Gradle do pobrania i wypisania bibliotek
+      run: ./gradlew assembleDebug

@@ -1,0 +1,25 @@
+name: Wyślij zależności Androida
+
+on:
+  push:
+    branches: [ "main", "master" ]
+
+jobs:
+  dependency-submission:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Ustawienie Javy (JDK 21)
+      uses: actions/setup-java@v4
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+
+    - name: Generowanie i wysyłanie grafu zależności
+      uses: gradle/actions/setup-gradle@v4
+      with:
+        dependency-graph: generate-and-submit

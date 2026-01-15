@@ -10,24 +10,42 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MyWeather"
-        android:textSize="40sp"
+        android:text="MyWeather DB"
+        android:textSize="35sp"
         android:textStyle="bold"
         android:textColor="#1A237E"
-        android:layout_marginBottom="50dp"/>
+        android:layout_marginBottom="30dp"/>
+
+    <TextView
+        android:id="@+id/tvLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lokalizacja: --"
+        android:textSize="18sp"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/tvDatabaseTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test Bazy: Oczekiwanie..."
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:textColor="#00695C"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"/>
 
     <TextView
         android:id="@+id/tvStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Aplikacja zablokowana"
-        android:textSize="24sp"
+        android:text="Status: Zablokowane"
         android:textColor="#D32F2F"/>
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Zaloguj (Odcisk Palca)"
+        android:text="Zaloguj i pobierz dane"
         android:layout_marginTop="30dp"/>
 </LinearLayout>

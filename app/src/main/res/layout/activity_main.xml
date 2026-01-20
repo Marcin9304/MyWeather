@@ -1,51 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="20dp"
+    android:fillViewport="true"
     android:background="#E0F7FA">
-
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MyWeather "
-        android:textSize="35sp"
-        android:textStyle="bold"
-        android:textColor="#1A237E"
-        android:layout_marginBottom="30dp"/>
-
-    <TextView
-        android:id="@+id/tvLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lokalizacja: --"
-        android:textSize="18sp"
-        android:layout_marginBottom="10dp"/>
-
-    <TextView
-        android:id="@+id/tvDatabaseTest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Test Bazy: Oczekiwanie..."
-        android:textSize="18sp"
-        android:textStyle="italic"
-        android:textColor="#00695C"
+        android:orientation="vertical"
         android:gravity="center"
-        android:layout_marginBottom="20dp"/>
-
-    <TextView
-        android:id="@+id/tvStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Status: Zablokowane"
-        android:textColor="#D32F2F"/>
-
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Zaloguj i pobierz dane"
-        android:layout_marginTop="30dp"/>
-</LinearLayout>
+        android:padding="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MyWeather"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textColor="#1A237E"
+            android:layout_marginBottom="20dp"/>
+        <TextView
+            android:id="@+id/tvTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="--°C"
+            android:textSize="80sp"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+        <TextView
+            android:id="@+id/tvDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oczekiwanie..."
+            android:textSize="24sp"
+            android:layout_marginBottom="20dp"/>
+        <TextView
+            android:id="@+id/tvAdvice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="..."
+            android:textSize="20sp"
+            android:textStyle="italic"
+            android:textColor="#D32F2F"
+            android:gravity="center"
+            android:padding="15dp"
+            android:background="#FFFFFF"
+            android:elevation="4dp"
+            android:layout_marginBottom="20dp"/>
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lokalizacja: Szukam GPS..."
+            android:textSize="14sp"
+            android:layout_marginBottom="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ostatnie Pomiary (Baza SQL):"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/tvHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Brak historii"
+            android:gravity="center"
+            android:padding="10dp"
+            android:background="#F0F0F0"
+            android:layout_marginBottom="20dp"/>
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Odśwież (Autoryzacja)"
+            android:backgroundTint="#3F51B5"/>
+    </LinearLayout>
+</ScrollView>
